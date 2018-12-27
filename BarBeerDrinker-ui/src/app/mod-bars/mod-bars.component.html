@@ -1,0 +1,125 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Insert/Delete/Update Bars Table!</h1>
+      <p class="lead">Click different buttons for different operations</p>
+      
+    </div>
+  </div>
+  <br>
+
+<div class="container">
+    <h2 class="text-center font-weight-light">Bars</h2>
+    <p-table [value]="bars" [paginator]="true" [rows]="10">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Bar </th>
+          <th>Openning Time</th>
+          <th>Closing Time</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-bar>
+        <tr>
+          <td>{{ bar.Name }}</td>
+          <td>{{ bar.Open_Time }}</td>
+          <td>{{ bar.Close_Time }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <br><br>
+  </div>
+
+  <style>
+      body {
+          background: #555;
+      }
+      
+      .content {
+          max-width: 500px;
+          margin: auto;
+          background: white;
+          padding: 10px;
+      }
+      </style>
+<!--
+<div class="container">
+  <h1 class="text-center font-weight-light">Bars</h1>
+  <fieldset>
+      <legend>Insert:</legend>
+  <h2 class = "font-weight-light">
+    Bar Name
+  </h2>
+  <input  #barNameBoxI type="text" [(ngModel)]="barNameValueI" required>
+  <h2 class = "font-weight-light">
+      Bar Opening Time
+    </h2>
+  <input  #barOpenTimeBoxI type="text" [(ngModel)]="barOpenTimeValueI" required>
+  <h2 class = "font-weight-light">
+      Bar Closing Time
+    </h2>
+  <input  #barCloseTimeBoxI type="text" [(ngModel)]="barCloseTimeValueI" required>
+  <br>
+
+  <button (click)="insertBar(barNameBoxI.value,barOpenTimeBoxI.value, barCloseTimeBoxI.value)" class="btn btn-primary">Insert</button>
+  <button (click)="barNameValueI=''" (click)="barOpenTimeValueI=''" (click)="barCloseTimeValueI=''" class="btn btn-primary">Clear</button>
+  </fieldset>
+  
+  <legend>----------------------------------------------------</legend>
+
+
+  <fieldset>
+      <legend>Delete:</legend>
+  <h2 class = "font-weight-light">
+    Bar Name
+  </h2>
+  <input  #barNameBoxD type="text" [(ngModel)]="barNameValueD" required>
+  <br>
+
+  <button (click)="delBar(barNameBoxD.value)" class="btn btn-primary">Delete</button>
+  <button (click)="barNameValueD=''" (click)="barOpenTimeValueD=''" (click)="barCloseTimeValueD=''" class="btn btn-primary">Clear</button>
+  </fieldset>
+
+  <legend>----------------------------------------------------</legend>
+
+  <fieldset>
+      <legend>Update:</legend>
+      <h2 class = "font-weight-light">
+          Target Bar Name
+        </h2>
+        <input  #barNameBoxU type="text" [(ngModel)]="barNameValueU" required>
+  <h2 class = "font-weight-light">
+    New Bar Name
+  </h2>
+  <input  #barNameBoxU_new type="text" [(ngModel)]="barNameValueU_new" required>
+  <h2 class = "font-weight-light">
+      Bar Opening Time
+    </h2>
+  <input  #barOpenTimeBoxU type="text" [(ngModel)]="barOpenTimeValueU" required>
+  <h2 class = "font-weight-light">
+      Bar Closing Time
+    </h2>
+  <input  #barCloseTimeBoxU type="text" [(ngModel)]="barCloseTimeValueU" required>
+  <br>
+
+  <button (click)="updateBar(barNameBoxU.value,barNameBoxU_new.value,barOpenTimeBoxU.value, barCloseTimeBoxU.value )" class="btn btn-primary">Update</button>
+  <button (click)="barNameValueU=''" (click)="barNameValueU_new=''" (click)="barOpenTimeValueU=''" (click)="barCloseTimeValueU=''" class="btn btn-primary">Clear</button>
+  </fieldset>
+
+</div>
+
+-->
+
+<div class="container">
+    <h1 class="text-center font-weight-light">Bars</h1>
+    <fieldset>
+        <legend>Please Enter MySql command to Insert/Delete/Update this table:</legend>
+    <h2 class = "font-weight-light">
+      Query:
+    </h2>
+   <!-- <input  #queryBox type="text" [(ngModel)]="inputQuery" required> -->
+    <textarea #queryBox type="text" cols = "100" rows="4" [(ngModel)]="inputQuery" required autoResize = "autoResize">
+    </textarea>
+    <br>
+  
+    <button (click)="exe_sql(queryBox.value)" class="btn btn-primary">Submit</button>
+    <button (click)="inputQuery=''" class="btn btn-primary">Clear</button>
+    </fieldset>

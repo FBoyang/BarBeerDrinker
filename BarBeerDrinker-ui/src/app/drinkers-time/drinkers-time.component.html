@@ -1,0 +1,37 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Find bars which {{ drinkerName }} visited!</h1>
+      <p class="lead"><a routerLink="/drinkers/{{ drinkerName }}/week">Click here if you want to see {{ drinkerName }}'s spending activity on different weeks</a></p>
+      <p class="lead"><a routerLink="/drinkers/{{ drinkerName }}/month">Click here if you want to see {{ drinkerName }}'s spending activity on different months</a></p>
+      
+    </div>
+  </div>
+  <br>
+
+  <div class="container">
+      <br>
+      <div id="bargraph"></div>
+    </div>
+<!--
+  <div class="container">
+    <h2 class="text-center font-weight-light">Bars</h2>
+    <p-table [value]="dates" [paginator]="true" [rows]="10">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Date </th>
+          <th>Spent</th>
+        
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-date>
+        <tr>
+          <td>{{ date.Date }}</td>
+          <td>{{ date.Spent }}</td>
+      
+        </tr>
+      </ng-template>
+    </p-table>
+    <br><br>
+  </div>
+
+  -->

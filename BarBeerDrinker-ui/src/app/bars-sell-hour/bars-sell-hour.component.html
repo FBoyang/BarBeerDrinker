@@ -1,0 +1,18 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Find {{barName}}'s the busiest periods of the day !</h1>
+      <p class="lead">A bar graph of {{barName}}'s sales distribution.</p>
+      <p-dropdown *ngIf="manufacturerOptions" [ngClass]="{ 'no-option-selected': selectedManufacturer === undefined || selectedManufacturer === null }"
+        placeholder="Filter by manufacturer" [options]="manufacturerOptions" [(ngModel)]="selectedManufacturer" showClear="true"
+        (onChange)="filterBeers($event.value)"></p-dropdown>
+    </div>
+  </div>
+  <br>
+  <div></div>
+  <br>
+  
+
+  <div class="container">
+      <br>
+      <div id="bargraph"></div>
+    </div>

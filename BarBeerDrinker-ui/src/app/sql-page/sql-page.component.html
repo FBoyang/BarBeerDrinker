@@ -1,0 +1,30 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Constumize your query on our Table!</h1>
+      <p class="lead">Extra criedit</p>
+      
+    </div>
+  </div>
+  <br>
+
+
+  <div class="container">
+      
+      <fieldset>
+          <legend>Please Enter MySql command to query this table:</legend>
+      <h2 class = "font-weight-light">
+        Query:
+      </h2>
+      <textarea #queryBox type="text" cols = "100" rows="4" [(ngModel)]="inputQuery" required autoResize = "autoResize">
+        </textarea>
+      <br>
+    
+      <button (click)="exe_sql_j(queryBox.value)" class="btn btn-primary">Submit</button>
+      <button (click)="inputQuery=''" class="btn btn-primary">Clear</button>
+      </fieldset>
+
+
+      <div class="container">
+
+          <pre id="json"></pre>
+      </div>

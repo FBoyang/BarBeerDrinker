@@ -1,0 +1,45 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Insert/Delete/Update Sells Table!</h1>
+      <p class="lead">Click different buttons for different operations</p>
+      
+    </div>
+  </div>
+  <br>
+
+<div class="container">
+    <h2 class="text-center font-weight-light">Sells</h2>
+    <p-table [value]="datas" [paginator]="true" [rows]="10">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Bar </th>
+          <th>Item</th>
+          <th>Price</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-data>
+        <tr>
+          <td>{{ data.Bar }}</td>
+          <td>{{ data.Item }}</td>
+          <td>{{ data.Price }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <br><br>
+  </div>
+
+
+  <div class="container">
+      <h1 class="text-center font-weight-light">Sells</h1>
+      <fieldset>
+          <legend>Please Enter MySql command to Insert/Delete/Update this table:</legend>
+      <h2 class = "font-weight-light">
+        Query:
+      </h2>
+      <textarea #queryBox cols = "100" rows="4" type="text" [(ngModel)]="inputQuery" required autoResize = "autoResize">
+        </textarea>
+      <br>
+    
+      <button (click)="exe_sql(queryBox.value)" class="btn btn-primary">Submit</button>
+      <button (click)="inputQuery=''" class="btn btn-primary">Clear</button>
+      </fieldset>

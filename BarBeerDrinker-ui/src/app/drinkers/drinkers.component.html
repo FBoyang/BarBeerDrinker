@@ -1,0 +1,40 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Find beer lovers!</h1>
+      <p class="lead">This page can be used to see all the drinkers in our system.</p>
+      <p-dropdown *ngIf="manufacturerOptions" [ngClass]="{ 'no-option-selected': selectedManufacturer === undefined || selectedManufacturer === null }"
+        placeholder="Filter by manufacturer" [options]="manufacturerOptions" [(ngModel)]="selectedManufacturer" showClear="true"
+        (onChange)="filterBeers($event.value)"></p-dropdown>
+    </div>
+  </div>
+  <br>
+  
+  
+  <div class="container">
+    <h2 class="text-center font-weight-light">Drinkers</h2>
+    <p-table [value]="drinkers" [paginator]="true" [rows]="10">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Name</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Data Option1</th>
+          <th>Option2</th>
+          <th>Option3</th>
+          <th>Option4</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-drinker>
+        <tr>
+          <td>{{ drinker.Name }}</td>
+          <td>{{ drinker.City }}</td>
+          <td>{{ drinker.State }}</td>
+          <td><a routerLink="/drinkers/{{ drinker.Name }}/barlist">Bars visited</a></td>
+          <td><a routerLink="/drinkers/{{ drinker.Name }}/topbeers">Favorite Beers</a></td>
+          <td><a routerLink="/drinkers/{{ drinker.Name }}/bar">Spending in Bars</a></td>
+          <td><a routerLink="/drinkers/{{ drinker.Name }}/date">Spending in dates</a></td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <br><br>
+  </div>

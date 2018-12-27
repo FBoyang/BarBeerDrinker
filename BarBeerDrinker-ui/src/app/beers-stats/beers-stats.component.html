@@ -1,0 +1,35 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">{{ beerName }}</h1>
+      <p class="beer-details" *ngIf="manufacturer">
+        Made by <i>{{ manufacturer }}</i>
+      </p>
+    </div>
+  </div>
+
+<div class="container">
+  <h2 class="text-center font-weight-light">options</h2>
+
+  <div></div>
+  <br>
+  <b>
+      <a routerLink="/beers/{{ beerName }}/topbars/">
+        Find out what bars sell this item
+      </a>
+  </b>
+  <div></div>
+  <br>
+  <b>
+      <a routerLink="/beers/{{ beerName }}/topdrinkers/">
+        Find out who also like this item
+      </a>
+  </b>
+  <div></div>
+  <br>
+  <b>
+    <a routerLink="/beers/{{ beerName }}/sellrecord">
+      Show sell records
+    </a>
+  </b>
+  <br><br>
+</div>

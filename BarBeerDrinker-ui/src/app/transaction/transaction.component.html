@@ -1,0 +1,30 @@
+
+<div class="container">
+    <h2 class="text-center font-weight-light">Transactions {{tranID}}</h2>
+    <p-table [value]="translist" [paginator]="true" [rows]="10">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Bar </th>
+          <th>Date</th>
+          <th>Drinker </th>
+          <th>Item</th>
+          <th>Price </th>
+          <th>Quantity</th>
+          <th>Time</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-tran>
+        <tr>
+          <td>{{ tran.BarName }}</td>
+          <td>{{ tran.Date }}</td>
+          <td>{{ tran.DrinkerName }}</td>
+          <td>{{ tran.Item }}</td>
+          <td>{{ tran.Price}}</td>
+          <td>{{ tran.Quantity }}</td>
+          <td>{{ tran.Time }}</td>
+        
+        </tr>
+      </ng-template>
+    </p-table>
+    <br><br>
+  </div>

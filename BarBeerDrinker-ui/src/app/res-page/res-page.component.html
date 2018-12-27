@@ -1,0 +1,59 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Verify query on our Tables!</h1>
+      
+      
+    </div>
+  </div>
+  <br>
+
+
+  <div class="container">
+
+      
+      <fieldset>
+          <legend>Please Enter MySql command to query this table:</legend>
+      <h2 class = "font-weight-light">
+          Requirement1: 
+          Transactions/bills cannot be issued at times when the given bar is closed
+      </h2>
+      <textarea #queryBox1 type="text" cols = "100" rows="4"  [(ngModel)]="inputQuery1" required autoResize = "autoResize">
+        </textarea>
+      <br>
+    
+      <button (click)="val(queryBox1.value)" class="btn btn-primary">Submit</button>
+      <button (click)="inputQuery1=''" class="btn btn-primary">Clear</button>
+      </fieldset>
+
+      <fieldset>
+          <legend>Please Enter MySql command to query this table:</legend>
+      <h2 class = "font-weight-light">
+          Requirement2:
+          Drinkers cannot frequent bars in different state
+      </h2>
+      <textarea #queryBox2 type="text" cols = "100" rows="4" [(ngModel)]="inputQuery2" required autoResize = "autoResize">
+        </textarea>
+      <br>
+    
+      <button (click)="val(queryBox2.value)" class="btn btn-primary">Submit</button>
+      <button (click)="inputQuery2=''" class="btn btn-primary">Clear</button>
+      </fieldset>
+
+      <fieldset>
+          <legend>Please Enter MySql command to query this table:</legend>
+      <h4 class = "font-weight-light">
+          Requirement3: 
+          For every two beers, b1 and b2, different bars may charge differently for b1 and b2 but b1 should either be less expensive than b2 in ALL bars or more expensive than b2 in ALL bars.  Cannot be the case that in one bar Corona is more expensive than Bud and in another Bud is more expensive than Corona.  But Corona may be more expensive than Bud in one bar,  and have the same price as Bud in another.
+      </h4>
+      <textarea #queryBox3 type="text" cols = "100" rows="4" [(ngModel)]="inputQuery3" required autoResize = "autoResize">
+        </textarea>
+      <br>
+    
+      <button (click)="val(queryBox3.value)" class="btn btn-primary">Submit</button>
+      <button (click)="inputQuery3=''" class="btn btn-primary">Clear</button>
+      </fieldset>
+
+      </div>
+
+
+      

@@ -1,0 +1,118 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">{{ barName}}</h1>
+      <p class="bar-details" *ngIf="barDetails">
+          {{ barDetails?.addr }} <span *ngIf="barDetails.addr && barDetails.city">|</span> {{ barDetails?.city }}
+          <br>
+          {{ barDetails?.phone }}
+      </p>
+    </div>
+</div>
+
+<div class="container">
+        <h2 class="text-center font-weight-light">options</h2>
+      
+        <div></div>
+        <br>
+        <b>
+            <a routerLink="/bars/{{ barName }}/topdrinkers">
+              Find out the top drinker of {{ barName }}
+            </a>
+        </b>
+        <div></div>
+        <br>
+        <b>
+            <a routerLink="/bars/{{ barName }}/topbeers/">
+              Find out the most popular beer
+            </a>
+        </b>
+        <div></div>
+        <br>
+        <b>
+          <a routerLink="/bars/{{ barName }}/topmanufs/">
+            Find out the most popular manufacturers
+          </a>
+        </b>
+        <br><br>
+
+        <b>
+                <a routerLink="/bars/{{ barName }}/sellweekday/">
+                  Find out  the busiest day of the week
+                </a>
+              </b>
+              <br><br>
+
+         <b>
+          <a routerLink="/bars/{{ barName }}/sellhour/">
+            Find out the busiest periods of the day
+          </a>
+        </b>
+        <br><br>
+
+
+<div class="container">
+  <h1 class="text-center font-weight-light">Make Transactions</h1>
+  <fieldset>
+      <legend>New Transcation at {{ barName }}:</legend>
+  <h2 class = "font-weight-light">
+    Drinker Name
+  </h2>
+  <input  #drinkerNameBox type="text" [(ngModel)]="drinkerNameValue" required>
+  <h2 class = "font-weight-light">
+      Transcation ID
+    </h2>
+  <input  #transIDBox type="text" [(ngModel)]="transIDValue" required>
+  <h2 class = "font-weight-light">
+      Tips
+    </h2>
+  <input  #tipsBox type="text" [(ngModel)]="tipsValue" required>
+  <br>
+
+  <h2 class = "font-weight-light">
+        Date
+      </h2>
+    <input  #dateBox type="text" [(ngModel)]="dateValue" required>
+    <br>
+
+    <h2 class = "font-weight-light">
+            Time
+          </h2>
+        <input  #timeBox type="text" [(ngModel)]="timeValue" required>
+        <br>
+
+  <button (click)="makeTrans(drinkerNameValue,transIDValue,tipsValue,dateValue,timeValue)" class="btn btn-primary">Submit</button>
+  <button 
+  (click)="drinkerNameValue=''" 
+  (click)="transIDValue=''" 
+  (click)="tipsValue=''"
+  (click)="dateValue=''"
+  (click)="timeValue=''"
+  class="btn btn-primary">Clear</button>
+  </fieldset>
+
+</div>
+<!--
+<div class="container">
+    <h2 class="text-center font-weight-light">Menu</h2>
+    <br>
+    <p-table [value]="menu">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Beer</th>
+                <th>Menufacturer</th>
+                <th>Price</th>
+                <th>Likes</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+            <tr>
+                <td><a routerLink="/beers/{{ item.beer }}">{{ item.beer }}</a></td>
+                <td>{{ item.manf }}</td>
+                <td>{{ item.price | currency }}</td>
+                <td>{{ item.likes }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+-->

@@ -1,0 +1,212 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Modification page</h1>
+      <p class="lead">This page allows you to modify all tables</p>
+      <p-dropdown *ngIf="manufacturerOptions" [ngClass]="{ 'no-option-selected': selectedManufacturer === undefined || selectedManufacturer === null }"
+        placeholder="Filter by manufacturer" [options]="manufacturerOptions" [(ngModel)]="selectedManufacturer" showClear="true"
+        (onChange)="filterBeers($event.value)"></p-dropdown>
+    </div>
+  </div>
+  <br>
+
+
+  <div class="container">
+    
+      <h2 class="text-center font-weight-light">options</h2>
+    
+      <div></div>
+      <br>
+      <b>
+          <a routerLink="/mod/bars">
+            View/Edit data of Bars table.
+          </a>
+      </b>
+      <div></div>
+      <br>
+      <b>
+          <a routerLink="/mod/drinkers">
+            View/Edit data of Drinkers table.
+          </a>
+      </b>
+      <div></div>
+      <br>
+      <b>
+        <a routerLink="/mod/items">
+          View/Edit data of Items table.
+        </a>
+      </b>
+
+      <div></div>
+      <br>
+      <b>
+        <a routerLink="/mod/freq">
+          View/Edit data of Frequent table.
+        </a>
+      </b>
+
+      <div></div>
+      <br>
+      <b>
+        <a routerLink="/mod/loc">
+          View/Edit data of Locate table.
+        </a>
+      </b>
+
+      <div></div>
+      <br>
+      <b>
+        <a routerLink="/mod/sells">
+          View/Edit data of sells table.
+        </a>
+      </b>
+
+      <div></div>
+      <br>
+      <b>
+        <a routerLink="/mod/city">
+          View/Edit data of City table.
+        </a>
+      </b>
+      <div></div>
+      <br>
+      <b>
+          <a routerLink="/mod/include">
+            View/Edit data of Include table.
+          </a>
+      </b>
+      <div></div>
+      <br>
+      <b>
+          <a routerLink="/mod/like">
+            View/Edit data of Like table.
+          </a>
+      </b>
+      <div></div>
+      <br>
+      <b>
+          <a routerLink="/mod/make">
+            View/Edit data of Make table.
+          </a>
+      </b>
+      
+      <div></div>
+      <br>
+      <b>
+          <a routerLink="/mod/trans">
+            View/Edit data of Transcations table.
+          </a>
+      </b>
+      <br><br>
+
+      
+    </div>
+
+  <!--
+  <h1>Text ({{textValue}})</h1>
+  <input #textbox type="text" [(ngModel)]="textValue" required>
+  <button (click)="logText(textbox.value)">Update Log</button>
+  <button (click)="textValue=''">Clear</button>
+-->
+<!--
+  <h2>Template Reference Variable</h2>
+  Type: '{{textbox.type}}', required: '{{textbox.hasAttribute('required')}}',
+  upper: '{{textbox.value.toUpperCase()}}'
+
+  <h2>Log <button (click)="log=''">Clear</button></h2>
+  <pre>{{log}}</pre>
+-->
+<!--
+<h1>Bars</h1>
+    <input #barBox type="text" [(ngModel)]="barValue" required>
+    <button (click)="barLogText(barBox.value)" class="btn btn-primary">Insert</button>
+    <button (click)="barValue=''" class="btn btn-primary">Clear</button>
+
+<h1>Drinkers</h1>
+    <input #drinkerBox type="text" [(ngModel)]="drinkerValue" required>
+    <button (click)="drinkerInsert(barbox.value)" class="btn btn-primary">Insert</button>
+    <button (click)="drinkerValue=''" class="btn btn-primary">Clear</button>  
+
+<h1>Items</h1>
+    <input #itemBox type="text" [(ngModel)]="itemValue" required>
+    <button (click)="itemInsert(barbox.value)" class="btn btn-primary">Insert</button>
+    <button (click)="itemValue=''" class="btn btn-primary">Clear</button>  
+  
+    
+<h1>Include</h1>
+    <input #includeBox type="text" [(ngModel)]="includeValue" required>
+    <button (click)="includeInsert(barbox.value)" class="btn btn-primary">Insert</button>
+    <button (click)="includeValue=''" class="btn btn-primary">Clear</button>    
+
+<h1>Like</h1>
+    <input #likeBox type="text" [(ngModel)]="likeValue" required>
+    <button (click)="likeInsert(barbox.value)" class="btn btn-primary">Insert</button>
+    <button (click)="likeValue=''" class="btn btn-primary">Clear</button>
+  
+<h1>Make</h1>
+    <input #makeBox type="text" [(ngModel)]="makeValue" required>
+    <button (click)="makeInsert(barbox.value)" class="btn btn-primary">Insert</button>
+    <button (click)="makeValue=''" class="btn btn-primary">Clear</button>
+
+<h1>Transcation</h1>
+    <input #transcationBox type="text" [(ngModel)]="transcationValue" required>
+    <button (click)="transcationInsert(barbox.value)" class="btn btn-primary">Insert</button>
+    <button (click)="transcationValue=''" class="btn btn-primary">Clear</button>
+   -->
+    <!--
+    <form>
+    
+    
+    <div class="form-group">
+      <label for="exampleInputEmail1">Bars</label>
+      <input type="email" class="form-control" id="fname0" value = "test" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">A list of bars</small>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Drinkers</label>
+        <input type="email" class="form-control" id="fname1" value = "test" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">A list of drinkers</small>
+      </div>
+
+      <div class="form-group">
+          <label for="exampleInputEmail1">Includes</label>
+          <input type="email" class="form-control" id="fname2" value = "test" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">A list of includes</small>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Items</label>
+            <input type="email" class="form-control" id="fname3" value = "test" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">A list of items</small>
+          </div>
+
+          <div class="form-group">
+              <label for="exampleInputEmail1">Likes</label>
+              <input type="email" class="form-control" id="fname4" value = "test" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">A list of likss</small>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Makes</label>
+                <input type="email" class="form-control" id="fname5" value = "test" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">A list of makes</small>
+              </div>
+    
+              <div class="form-group">
+                  <label for="exampleInputEmail1">Transcations</label>
+                  <input type="email" class="form-control" id="fname6" value = "test" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">A list of transcations</small>
+                </div>
+               -->
+
+   <!--  <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+     <label class="form-check-label" for="exampleCheck1">Check me out</label> 
+    </div>-->
+<!--  
+    <button onclick="myFunction()" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+-->
+
+
+

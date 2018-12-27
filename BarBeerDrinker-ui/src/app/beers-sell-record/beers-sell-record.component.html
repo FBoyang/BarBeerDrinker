@@ -1,0 +1,29 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Sell Record of {{ beerName }}</h1>
+      <p class="lead">This page shows the time distribution of when {{ beerName }} sells the most</p>
+      <p-dropdown *ngIf="manufacturerOptions" [ngClass]="{ 'no-option-selected': selectedManufacturer === undefined || selectedManufacturer === null }"
+        placeholder="Filter by manufacturer" [options]="manufacturerOptions" [(ngModel)]="selectedManufacturer" showClear="true"
+        (onChange)="filterBeers($event.value)"></p-dropdown>
+    </div>
+  </div>
+  <br>
+
+  <div class="container">
+      <h2 class="text-center font-weight-light">Sells Record</h2>
+      <p-table [value]="sellRecord" [paginator]="true" [rows]="10">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Date Sold</th>
+            <th>Amount Sold</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-record>
+          <tr>
+            <td>{{ record.Date}}</td>
+            <td>{{ record.Amount }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <br><br>
+    </div>

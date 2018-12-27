@@ -1,0 +1,53 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Find time which {{ drinkerName }} visited {{ barName }}!</h1>
+      <p class="lead">{{ drinkerName }}'s spending at {{ barName }} in different dates</p>
+      
+    </div>
+  </div>
+  <br>
+
+  <!--
+  <div class="container">
+      <br>
+      <a routerLink="/drinkers/{{ drinkerName }}/topbeers">
+      <button type="submit" class="btn-primary">Top Beers</button>
+    </a>
+    
+    </div>
+
+    -->
+    
+  <!--
+    <div class="container">
+        <br>
+    
+        <div id="bargraph"></div>
+      </div>
+      -->
+  <div class="container">
+    <h2 class="text-center font-weight-light">{{barName}}</h2>
+    <p-table [value]="trans" [paginator]="true" [rows]="10">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Bar Name</th>
+          <th>Date </th>
+  
+         
+          <th>Time</th>
+          
+          <th>Transaction ID</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-bar>
+        <tr>
+          <td>{{ bar.BarName }}</td>
+          <td>{{ bar.Date }}</td>
+          <td>{{ bar.Time }}</td>
+          <td><a routerLink="/drinkers/{{ drinkerName }}/barlist/{{ bar.BarName }}/{{ bar.TransID }}"> {{ bar.TransID }} </a></td>
+         
+        </tr>
+      </ng-template>
+    </p-table>
+    <br><br>
+  </div>
